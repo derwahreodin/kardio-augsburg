@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kardiologie Augsburg – Ihre Spezialisten für Herzerkrankungen. Modernste Diagnostik für Kassenpatienten und Privatpatienten. Dr. Tegtmeyer & Dr. Neumann. Termin: 0821 99974310." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Kardiologie Augsburg – Ihre Herzspezialisten" />
+  <meta property="og:description" content="Kardiologische Gemeinschaftspraxis in Augsburg. Modernste Diagnostik, persönliche Betreuung. Kassenpatienten & Privatpatienten willkommen." />
+  <meta property="og:type" content="website" />
+  <title>Kardiologie Augsburg – Ihre Herzspezialisten</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Kardiologie Augsburg – Ihre Spezialisten",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ulmer Straße 160, Aufgang A",
+      "addressLocality": "Augsburg",
+      "postalCode": "86156",
+      "addressCountry": "DE"
+    },
+    "telephone": "+4982199974310",
+    "openingHours": ["Mo 13:00-18:00", "Tu-We 08:00-13:00,14:00-18:00", "Th 08:00-13:00", "Fr 08:00-12:00"],
+    "medicalSpecialty": "Cardiology"
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Skip Navigation -->
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════ -->
+  <nav id="main-nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-island">
+      <a class="nav-logo" href="#startseite" aria-label="Kardiologie Augsburg – Startseite">
+        <img src="Logo.png" alt="Kardiologie Augsburg – Ihre Spezialisten" />
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a class="nav-link" href="#ueber-uns">Über uns</a></li>
+        <li><a class="nav-link" href="#leistungen">Leistungen</a></li>
+        <li><a class="nav-link" href="#team">Team</a></li>
+        <li><a class="nav-link" href="#news">Kardiologie Update</a></li>
+        <li><a class="nav-link" href="#anfahrt">Anfahrt</a></li>
+        <li><a class="nav-link" href="#kontakt">Kontakt</a></li>
+      </ul>
+
+      <a class="nav-cta" href="#termin">Termin vereinbaren</a>
+
+      <button
+        class="nav-hamburger"
+        id="menu-btn"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Menü öffnen"
+      >
+        <span class="ham-line ham-line--top"></span>
+        <span class="ham-line ham-line--mid"></span>
+        <span class="ham-line ham-line--bot"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation" hidden>
+    <button class="mobile-overlay__close" id="menu-close" aria-label="Menü schließen">✕</button>
+    <nav>
+      <ul class="mobile-nav-list" role="list">
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#ueber-uns">Über uns</a></li>
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#leistungen">Leistungen</a></li>
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#team">Team</a></li>
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#news">Kardiologie Update</a></li>
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#anfahrt">Anfahrt</a></li>
+        <li class="mobile-nav-item"><a class="mobile-nav-link" href="#kontakt">Kontakt</a></li>
+        <li class="mobile-nav-item mobile-nav-item--cta">
+          <a class="mobile-nav-link" href="#termin">Termin vereinbaren</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="mobile-overlay__contact">
+      <a href="tel:082199974310">0821 99974310</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── HERO / STARTSEITE ── -->
+    <section id="startseite" class="section-hero" aria-label="Herzlich Willkommen">
+      <!-- Hintergrundbild (Ken Burns) -->
+      <div class="hero-bg" aria-hidden="true">
+        <img src="empfang.jpg" alt="" loading="eager" fetchpriority="high" />
+      </div>
+
+      <!-- Three.js Dot-Overlay -->
+      <canvas id="dotted-surface" aria-hidden="true"></canvas>
+
+      <!-- Dunkles Overlay -->
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- Inhalt -->
+      <div class="hero-content animate-on-scroll">
+        <span class="eyebrow-tag eyebrow-tag--white">Ihre Herzspezialisten in Augsburg</span>
+        <h1 class="hero-headline">
+          Herzmedizin<br />
+          <em>auf höchstem Niveau.</em>
+        </h1>
+        <p class="hero-subline">
+          Kassenpatienten &amp; Privatpatienten.<br />
+          Modernste Diagnostik – persönliche Betreuung.<br />
+          Facharzttermine innerhalb von 5 Werktagen.
+        </p>
+        <div class="hero-cta-group">
+          <a class="btn-primary" href="#termin">
+            Termin vereinbaren
+            <span class="btn-icon-wrap" aria-hidden="true">↗</span>
+          </a>
+          <a class="btn-ghost" href="#leistungen">Unsere Leistungen</a>
+        </div>
+      </div>
+
+      <!-- Öffnungszeiten-Karte -->
+      <div class="hero-hours-card animate-on-scroll delay-2" aria-label="Öffnungszeiten">
+        <span class="hours-card-label">Öffnungszeiten</span>
+        <ul class="hours-list" role="list">
+          <li><span>Montag</span><span>13:00–18:00</span></li>
+          <li><span>Di – Mi</span><span>08–13 &amp; 14–18 Uhr</span></li>
+          <li><span>Donnerstag</span><span>08:00–13:00</span></li>
+          <li><span>Freitag</span><span>08:00–12:00</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── STATS BAR ── -->
+    <div class="ueber-stats-wrap">
+      <div class="container">
+        <div class="stats-bar">
+          <div class="stat-item animate-on-scroll">
+            <span class="stat-number" data-count="5000" data-suffix="+">5.000+</span>
+            <span class="stat-label">Koronarangiographien</span>
+          </div>
+          <div class="stat-item animate-on-scroll delay-1">
+            <span class="stat-number" data-count="20" data-suffix="+">20+</span>
+            <span class="stat-label">Jahre klinische Erfahrung</span>
+          </div>
+          <div class="stat-item animate-on-scroll delay-2">
+            <span class="stat-number" data-count="2">2</span>
+            <span class="stat-label">Fachärzte für Kardiologie</span>
+          </div>
+          <div class="stat-item animate-on-scroll delay-3">
+            <span class="stat-number">4,8</span>
+            <div class="stat-stars" aria-label="4,8 von 5 Sternen">★★★★★</div>
+            <span class="stat-label">Google Bewertung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ÜBER UNS ── -->
+    <section id="ueber-uns">
+
+      <!-- ── Scroll-scrubbed video (400 vh = 4 phases) ── -->
+      <div class="ueber-scroll-wrapper">
+        <div class="ueber-sticky">
+
+          <!-- Background video — scrubbed by scroll -->
+          <video id="ueber-video" muted playsinline preload="auto"
+                 aria-label="Einblick in die Kardiologie Augsburg">
+            <source src="Video1.mp4" type="video/mp4" />
+          </video>
+
+          <!-- Dark overlay -->
+          <div class="ueber-video-overlay" aria-hidden="true"></div>
+
+          <!-- Progress bar -->
+          <div class="ueber-progress-bar" id="ueber-progress" aria-hidden="true"></div>
+
+          <!-- Phase dots -->
+          <div class="ueber-phase-dots" aria-hidden="true">
+            <div class="ueber-dot active" data-dot="0"></div>
+            <div class="ueber-dot"        data-dot="1"></div>
+            <div class="ueber-dot"        data-dot="2"></div>
+            <div class="ueber-dot"        data-dot="3"></div>
+          </div>
+
+          <!-- Phase 0 — Kooperation auf Augenhöhe -->
+          <div class="ueber-phase active" data-phase="0">
+            <div class="ueber-phase-label">Unser Versprechen</div>
+            <h2>Kooperation auf<br><em>Augenhöhe.</em></h2>
+            <p>
+              Unsere Patienten sind auch unsere Partner. Wir bieten Ihnen
+              Hilfe zur Selbsthilfe und haben Respekt vor Ihren Vorstellungen
+              und Erwartungen. Zudem legen wir Wert auf Behandlungen und Services,
+              die so freundlich und kompetent, wie gründlich und zügig sind.
+            </p>
+          </div>
+
+          <!-- Phase 1 — Qualität -->
+          <div class="ueber-phase" data-phase="1">
+            <div class="ueber-phase-label">Unser Anspruch</div>
+            <h2>Medizinische<br><em>Qualität.</em></h2>
+            <p>
+              Die medizinische Qualität hat oberste Priorität. Um eine exzellente
+              ärztliche Versorgung zu gewährleisten, haben wir uns zu einem
+              kontinuierlichen, systematischen und selbstkritischen
+              Verbesserungsprozess verpflichtet. Wir behandeln jeden Patienten
+              unabhängig seines Versichertenstatus mit der bestmöglichen Qualität.
+            </p>
+          </div>
+
+          <!-- Phase 2 — Teamgeist -->
+          <div class="ueber-phase" data-phase="2">
+            <div class="ueber-phase-label">Unser Team</div>
+            <h2>Offen.<br><em>Teamgeist.</em></h2>
+            <p>
+              Zum Wohle unserer Patienten und von uns selbst ist unser Praxisklima
+              offen, zugewandt und freundlich. Unsere Mitarbeiterinnen und
+              Mitarbeiter sind unser wichtigstes Gut.
+            </p>
+          </div>
+
+          <!-- Phase 3 — Kurzfristige Termine & CTA -->
+          <div class="ueber-phase" data-phase="3">
+            <div class="ueber-phase-label">Ihr nächster Schritt</div>
+            <h2>Kurzfristige<br><em>Termine.</em></h2>
+            <p>
+              Die Gesundheit Ihres Herzens lassen wir nicht warten. Wir
+              garantieren Ihnen deshalb einen Termin innerhalb von fünf
+              Werktagen bei einer unserer Fachärztinnen oder Fachärzte.
+            </p>
+            <a class="btn-primary" href="#termin">
+              Jetzt Termin vereinbaren
+              <span class="btn-icon-wrap" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </div>
+      </div><!-- /ueber-scroll-wrapper -->
+
+    </section>
+
+    <!-- ── LEISTUNGEN ── -->
+    <section id="leistungen" class="section section--surface">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="eyebrow-tag">Leistungen</span>
+          <h2 class="section-headline">
+            Modernste kardiologische<br />
+            <em>Diagnostik & Therapie</em>
+          </h2>
+          <p class="body-text" style="margin-inline: auto;">
+            Von der einfachen EKG-Untersuchung bis zur interventionellen Kardiologie –
+            wir bieten Ihnen das gesamte Spektrum der nicht-invasiven und invasiven
+            Herzdiagnostik unter einem Dach.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1 — EKG -->
+          <div class="leistung-card leistung-card--image animate-on-scroll">
+            <div class="leistung-card__img">
+              <img src="EKG.jpeg" alt="EKG-Aufzeichnung" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Ruhe- &amp; Belastungs-EKG</h3>
+              <p class="leistung-desc">
+                Standardisierte Ruhe-EKG-Ableitung sowie Fahrrad-Ergometrie zur
+                Beurteilung der Herzfunktion unter körperlicher Belastung. Erkennung
+                von Herzrhythmusstörungen, koronarer Herzerkrankung und Ischämiezeichen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 — Echokardiographie -->
+          <div class="leistung-card leistung-card--image animate-on-scroll delay-1">
+            <div class="leistung-card__img">
+              <img src="Echo.jpeg" alt="Echokardiographie Farb-Doppler" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Echokardiographie</h3>
+              <p class="leistung-desc">
+                Transthorakale Farbdoppler-Echokardiographie zur Beurteilung von
+                Herzstruktur, Klappenfunktion und kardialer Pumpleistung.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 — Langzeit-EKG -->
+          <div class="leistung-card leistung-card--image animate-on-scroll delay-2">
+            <div class="leistung-card__img">
+              <img src="LZ.jpeg" alt="Langzeit-EKG Aufzeichnung" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Langzeit-EKG</h3>
+              <p class="leistung-desc">
+                24-Stunden-Langzeit-EKG zur Diagnose von Herzrhythmusstörungen,
+                intermittierendem Vorhofflimmern und Synkopen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 — Stressechokardiographie -->
+          <div class="leistung-card leistung-card--image animate-on-scroll">
+            <div class="leistung-card__img">
+              <img src="stress.jpg" alt="Stressechokardiographie" loading="lazy" style="object-position: center center;" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Stressechokardiographie</h3>
+              <p class="leistung-desc">
+                Echokardiographie in Ruhe und unter Fahrradergometer-Belastung zur
+                Erkennung von Durchblutungsstörungen des Herzmuskels. Höhere
+                Aussagekraft als das Belastungs-EKG – in Studien mit einem
+                kardialen MRT vergleichbar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 — Herzkatheterlabor -->
+          <div class="leistung-card leistung-card--image animate-on-scroll delay-1">
+            <div class="leistung-card__img">
+              <img src="Koro.jpeg" alt="Koronarangiographie" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Herzkatheterlabor</h3>
+              <p class="leistung-desc">
+                Invasive Koronardiagnostik und interventionelle Therapie im
+                Herzkatheterlabor. Koronarangiographie und Stentimplantation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6 — Labordiagnostik -->
+          <div class="leistung-card leistung-card--image animate-on-scroll delay-2">
+            <div class="leistung-card__img">
+              <img src="Labor.jpeg" alt="Labordiagnostik Blutröhrchen" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Labordiagnostik</h3>
+              <p class="leistung-desc">
+                Umfassende Laboranalysen: Cholesterin, LDL/HDL, Triglyzeride,
+                Troponin, NT-proBNP, HbA1c, Nüchternglukose und Risikofaktoren.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 7 — Karotis-Doppler -->
+          <div class="leistung-card leistung-card--image animate-on-scroll">
+            <div class="leistung-card__img">
+              <img src="hals.jpg" alt="Karotis-Doppler Ultraschall" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Karotis-Doppler</h3>
+              <p class="leistung-desc">
+                Ultraschall der Halsschlagadern zur Früherkennung von Stenosen
+                und arteriosklerotischen Plaques. Schlaganfallprävention.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 8 — Langzeitblutdruck -->
+          <div class="leistung-card leistung-card--image animate-on-scroll delay-1">
+            <div class="leistung-card__img">
+              <img src="blutdruck.png" alt="Langzeitblutdruckmessung" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Langzeitblutdruck</h3>
+              <p class="leistung-desc">
+                Ambulante 24-Stunden-Blutdruckmessung (ABPM) zur präzisen
+                Diagnostik von Bluthochdruck, Weißkittel-Hypertonie und
+                nächtlichen Blutdruckabfällen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 9 — Kardio-Vorsorge & Prävention -->
+          <div class="leistung-card leistung-card--image animate-on-scroll delay-2">
+            <div class="leistung-card__img">
+              <img src="Ergo.png" alt="Ergometrie Belastungstest" loading="lazy" />
+            </div>
+            <div class="leistung-card__body">
+              <h3 class="leistung-title">Kardio-Vorsorge &amp; Prävention</h3>
+              <p class="leistung-desc">
+                Umfassender Herzcheck mit Risikostratifizierung nach SCORE-System.
+                Individuelle Präventionsberatung zu Lebensstil, Ernährung und
+                kardiovaskulären Risikofaktoren.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ── -->
+    <section id="team" class="section section--light">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="eyebrow-tag">Unser Team</span>
+          <h2 class="section-headline">
+            Ihre Ärzte.<br />
+            <em>Erfahren &amp; engagiert.</em>
+          </h2>
+          <p class="body-text" style="margin-inline: auto;">
+            Unsere Fachärzte verbinden jahrelange universitäre Ausbildung mit
+            persönlicher Zuwendung – für eine Medizin, die den Menschen in den
+            Mittelpunkt stellt.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Dr. Roland Tegtmeyer -->
+          <div class="arzt-card animate-on-scroll">
+            <div class="arzt-card__photo">
+              <img src="Roland.jpeg" alt="Dr. med. Roland Tegtmeyer" loading="lazy" />
+            </div>
+            <div class="arzt-card__body">
+              <span class="arzt-card__title">Facharzt Innere Medizin &amp; Kardiologie</span>
+              <h3 class="arzt-card__name">Dr. med. Roland Tegtmeyer</h3>
+              <p class="arzt-card__specialty">Interventionelle Kardiologie · Zusatzbezeichnung Intensiv- und Notfallmedizin</p>
+              <p class="arzt-card__bio">
+                Dr. Tegtmeyer schloss sein Medizinstudium an der LMU München ab
+                (2005–2011) und erlangte 2018 die Facharztanerkennung für Innere
+                Medizin und Kardiologie. Zuvor war er als Oberarzt am Universitätsklinikum
+                Tübingen tätig. Mit über 15 Jahren klinischer Erfahrung
+                und mehr als 1.000 durchgeführten Koronarangiographien bringt er
+                universitäre Spitzenmedizin in die Praxis.
+              </p>
+              <button class="arzt-mehr-btn" onclick="openArztModal('roland')" aria-haspopup="dialog">
+                Mehr erfahren
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dr. Christian Neumann -->
+          <div class="arzt-card animate-on-scroll delay-2">
+            <div class="arzt-card__photo">
+              <img src="christian.jpg" alt="Dr. med. Christian Neumann" loading="lazy" />
+            </div>
+            <div class="arzt-card__body">
+              <span class="arzt-card__title">Facharzt Interventionelle Kardiologie</span>
+              <h3 class="arzt-card__name">Dr. med. Christian Neumann</h3>
+              <p class="arzt-card__specialty">Interventionelle Kardiologie · ICD- und Schrittmachertherapie</p>
+              <p class="arzt-card__bio">
+                Dr. Neumann studierte Medizin an der RWTH Aachen (2000–2006) und
+                spezialisierte sich auf interventionelle Kardiologie sowie
+                Herzrhythmustherapie. Er verfügt über Zertifizierungen für
+                minimalinvasive Mitralklappeninterventionen, Herzschrittmacher-
+                und ICD-Therapie. Mitglied der Deutschen Gesellschaft für
+                Kardiologie (DGK) und der European Society of Cardiology (ESC).
+              </p>
+              <button class="arzt-mehr-btn" onclick="openArztModal('christian')" aria-haspopup="dialog">
+                Mehr erfahren
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Placeholder -->
+          <div class="arzt-card arzt-card--placeholder animate-on-scroll delay-4">
+            <div class="arzt-card__photo" aria-hidden="true">
+              <div class="arzt-card__photo-placeholder">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <line x1="12" y1="8" x2="12" y2="14"></line>
+                  <line x1="9" y1="11" x2="15" y2="11"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="arzt-card__body">
+              <span class="arzt-card__title">Facharzt · Kardiologie</span>
+              <h3 class="arzt-card__name">Dr. med. Vorname Nachname</h3>
+              <p class="arzt-card__specialty">Schwerpunkt folgt in Kürze</p>
+              <p class="arzt-card__bio">
+                Wir wachsen – ein weiterer Facharzt verstärkt unser Team.
+                Details werden in Kürze bekanntgegeben.
+              </p>
+              <div class="arzt-card__tags">
+                <span class="tag">Details folgen</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GOOGLE BEWERTUNGEN ── -->
+    <section id="bewertungen" class="section section--surface">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="eyebrow-tag">Google Bewertungen</span>
+          <h2 class="section-headline">
+            Was unsere Patienten<br />
+            <em>über uns sagen</em>
+          </h2>
+          <div class="google-rating-bar">
+            <span class="google-rating-bar__score">4,8</span>
+            <div>
+              <div class="google-rating-bar__stars" aria-label="4,8 von 5 Sternen">★★★★★</div>
+              <div class="google-rating-bar__label">
+                Basierend auf Google Bewertungen
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Bewertung 1 -->
+          <article class="review-card animate-on-scroll">
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">T</div>
+              <div class="review-card__meta">
+                <div class="review-card__name">Thomas K.</div>
+                <div class="review-card__date">vor 2 Monaten</div>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 von 5 Sternen">
+              ★★★★★
+            </div>
+            <p class="review-card__text">
+              "Sehr kompetente und einfühlsame Behandlung. Dr. Tegtmeyer hat
+              sich viel Zeit genommen und alles ausführlich erklärt. Kurze
+              Wartezeiten, modernes Equipment – ich fühle mich hier sehr gut
+              aufgehoben."
+            </p>
+            <div class="review-card__google">
+              <svg class="review-card__google-logo" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              <span>Google Bewertung</span>
+            </div>
+          </article>
+
+          <!-- Bewertung 2 -->
+          <article class="review-card animate-on-scroll delay-2">
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">M</div>
+              <div class="review-card__meta">
+                <div class="review-card__name">Maria S.</div>
+                <div class="review-card__date">vor 4 Monaten</div>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 von 5 Sternen">
+              ★★★★★
+            </div>
+            <p class="review-card__text">
+              "Endlich eine Kardiologiepraxis, die Kassenpatienten genauso
+              behandelt wie Privatpatienten. Freundliches Personal, moderne
+              Räume und vor allem: Dr. Neumann hat meine Herzschrittmacher-
+              Einstellung perfekt angepasst. Klare Empfehlung!"
+            </p>
+            <div class="review-card__google">
+              <svg class="review-card__google-logo" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              <span>Google Bewertung</span>
+            </div>
+          </article>
+
+          <!-- Bewertung 3 -->
+          <article class="review-card animate-on-scroll delay-4">
+            <div class="review-card__header">
+              <div class="review-card__avatar" aria-hidden="true">R</div>
+              <div class="review-card__meta">
+                <div class="review-card__name">Robert B.</div>
+                <div class="review-card__date">vor 6 Monaten</div>
+              </div>
+            </div>
+            <div class="review-card__stars" aria-label="5 von 5 Sternen">
+              ★★★★★
+            </div>
+            <p class="review-card__text">
+              "Sehr professionelle Praxis mit kurzen Wartezeiten – Termin
+              innerhalb von 3 Tagen. Die Echokardiographie wurde sehr
+              sorgfältig durchgeführt und die Befunde wurden mir verständlich
+              und ohne Zeitdruck erläutert. Danke!"
+            </p>
+            <div class="review-card__google">
+              <svg class="review-card__google-logo" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+              </svg>
+              <span>Google Bewertung</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEWS / AKTUELLES ── -->
+    <section id="news" class="section section--surface">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="eyebrow-tag">Aktuelles</span>
+          <h2 class="section-headline">
+            News aus der<br />
+            <em>Kardiologie</em>
+          </h2>
+          <p class="body-text" style="margin-inline: auto;">
+            Aktuelle Studien, Praxisneuigkeiten und Informationen rund ums Herz.
+          </p>
+        </div>
+
+        <div class="news-grid">
+          <!-- NEWS-START -->
+          <!-- News Card 1 -->
+          <article class="news-card animate-on-scroll"
+                   role="button" tabindex="0"
+                   onclick="openNewsModal(this)"
+                   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openNewsModal(this);}"
+                   data-news-title="Neue Praxis jetzt in Augsburg geöffnet"
+                   data-news-tag="Praxis"
+                   data-news-date="April 2026"
+                   data-news-gradient="linear-gradient(135deg, #e8f0fa, #d0e2f7)"
+                   data-news-icon="heart"
+                   data-news-doi=""
+                   data-news-text="Wir freuen uns, Ihnen unsere neue kardiologische Spezialpraxis an der Ulmer Straße 160 in Augsburg vorzustellen. Unser Team aus erfahrenen Fachärzten für Innere Medizin und Kardiologie bietet das gesamte Spektrum der modernen Herzmedizin – von der nichtinvasiven Diagnostik (EKG, Echokardiographie, Langzeit-Monitoring) bis zur interventionellen Therapie. Kassenpatienten und Privatpatienten sind herzlich willkommen. Termine können telefonisch unter 0821 99974310 vereinbart werden.">
+            <div class="news-card__image" aria-hidden="true">
+              <div class="news-card__image-bg"></div>
+              <div class="news-card__image-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">April 2026</span>
+                <span class="news-card__tag">Praxis</span>
+              </div>
+              <h3 class="news-card__title">Neue Praxis jetzt in Augsburg geöffnet</h3>
+              <p class="news-card__excerpt">
+                Wir freuen uns, unsere moderne kardiologische Gemeinschaftspraxis
+                an der Ulmer Straße 160 vorzustellen. Kassenpatienten und
+                Privatpatienten sind herzlich willkommen.
+              </p>
+              <span class="news-card__link" aria-hidden="true">Details ansehen <span>→</span></span>
+            </div>
+          </article>
+
+          <!-- News Card 2 -->
+          <article class="news-card animate-on-scroll delay-2"
+                   role="button" tabindex="0"
+                   onclick="openNewsModal(this)"
+                   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openNewsModal(this);}"
+                   data-news-title="CHAMPION-AF: WATCHMAN vs. NOAKs bei Vorhofflimmern"
+                   data-news-tag="Forschung"
+                   data-news-date="März 2026"
+                   data-news-gradient="linear-gradient(135deg, #e8f2f4, #d0e8f5)"
+                   data-news-icon="ekg"
+                   data-news-doi=""
+                   data-news-text="Die CHAMPION-AF-Studie vergleicht erstmals prospektiv den interventionellen Vorhofohrverschluss mit dem WATCHMAN FLX-Device mit einer optimierten NOAK-Therapie bei Patienten mit nicht-valvulärem Vorhofflimmern und erhöhtem Schlaganfallrisiko (CHA2DS2-VASc ≥2). In die randomisierte, kontrollierte Studie wurden über 3.000 Patienten eingeschlossen. Primärer Endpunkt ist das Komposit aus Schlaganfall, systemischer Embolie, ungeplanter Herzinsuffizienz-Hospitalisierung und kardiovaskulärem Tod. Die Ergebnisse liefern wichtige Daten für die Frage, wann ein interventioneller Vorhofohrverschluss der lebenslangen Antikoagulation vorzuziehen ist.">
+            <div class="news-card__image" aria-hidden="true">
+              <div class="news-card__image-bg" style="background: linear-gradient(135deg, #e8f2f4, #d0e8f5);"></div>
+              <div class="news-card__image-icon">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">März 2026</span>
+                <span class="news-card__tag">Forschung</span>
+              </div>
+              <h3 class="news-card__title">CHAMPION-AF: WATCHMAN vs. NOAKs bei Vorhofflimmern</h3>
+              <p class="news-card__excerpt">
+                Die CHAMPION-AF-Studie vergleicht erstmals prospektiv den
+                Vorhofohrverschluss mit dem WATCHMAN-Device mit einer
+                NOAK-Therapie bei Vorhofflimmernpatienten.
+              </p>
+              <span class="news-card__link" aria-hidden="true">Details ansehen <span>→</span></span>
+            </div>
+          </article>
+
+          <!-- News Card 3 -->
+          <article class="news-card animate-on-scroll delay-4"
+                   role="button" tabindex="0"
+                   onclick="openNewsModal(this)"
+                   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openNewsModal(this);}"
+                   data-news-title="Herzgesundheit beginnt im Alltag"
+                   data-news-tag="Prävention"
+                   data-news-date="Februar 2026"
+                   data-news-gradient="linear-gradient(135deg, #f0f4e8, #d8efd0)"
+                   data-news-icon="shield"
+                   data-news-doi=""
+                   data-news-text="Unser kardiovaskuläres Präventionsprogramm umfasst eine strukturierte Risikostratifizierung mit dem SCORE2-Algorithmus der European Society of Cardiology. Neben klassischen Risikofaktoren (Blutdruck, Cholesterin, Blutzucker, Rauchstatus) bieten wir erweiterte Diagnostik wie Karotis-Doppler-Sonographie und Belastungs-EKG an. Auf Basis Ihres individuellen Risikoprofils erstellen wir einen maßgeschneiderten Präventionsplan mit konkreten Lebensstilempfehlungen und – wenn erforderlich – medikamentöser Therapie. Vereinbaren Sie jetzt Ihren persönlichen Herzgesundheits-Check unter 0821 99974310.">
+            <div class="news-card__image" aria-hidden="true">
+              <div class="news-card__image-bg" style="background: linear-gradient(135deg, #f0f4e8, #d8efd0);"></div>
+              <div class="news-card__image-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">Februar 2026</span>
+                <span class="news-card__tag">Prävention</span>
+              </div>
+              <h3 class="news-card__title">Herzgesundheit beginnt im Alltag – unser Präventionsprogramm</h3>
+              <p class="news-card__excerpt">
+                Unser kardiovaskuläres Risiko-Checkup mit SCORE-Stratifizierung
+                hilft, Herzerkrankungen frühzeitig zu erkennen und gezielt
+                gegenzusteuern.
+              </p>
+              <span class="news-card__link" aria-hidden="true">Details ansehen <span>→</span></span>
+            </div>
+          </article>
+          <!-- NEWS-END -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ANFAHRT ── -->
+    <section id="anfahrt" class="section section--light">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="eyebrow-tag">Anfahrt</span>
+          <h2 class="section-headline">
+            Gut erreichbar<br />
+            <em>in Augsburg</em>
+          </h2>
+        </div>
+
+        <div class="anfahrt-inner">
+          <div class="anfahrt-map animate-on-scroll">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.0!2d10.8578!3d48.3705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sUlmer+Stra%C3%9Fe+160%2C+86156+Augsburg!5e0!3m2!1sde!2sde!4v1"
+              width="600"
+              height="500"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Standort Kardiologie Augsburg"
+            ></iframe>
+          </div>
+
+          <div class="anfahrt-info animate-on-scroll delay-2">
+            <div class="info-block">
+              <div class="info-block__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="info-block__label">Adresse</div>
+                <div class="info-block__value">
+                  Ulmer Straße 160, Aufgang A<br />
+                  86156 Augsburg
+                </div>
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.55 5.55l.96-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="info-block__label">Telefon</div>
+                <div class="info-block__value">
+                  <a href="tel:082199974310">0821 99974310</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="info-block__label">Öffnungszeiten</div>
+                <div class="info-block__value">
+                  <table class="oeffnungszeiten-table" aria-label="Öffnungszeiten">
+                    <tbody>
+                      <tr>
+                        <td>Montag</td>
+                        <td>13:00–18:00 Uhr</td>
+                      </tr>
+                      <tr>
+                        <td>Dienstag</td>
+                        <td>08:00–13:00 &amp; 14:00–18:00 Uhr</td>
+                      </tr>
+                      <tr>
+                        <td>Mittwoch</td>
+                        <td>08:00–13:00 &amp; 14:00–18:00 Uhr</td>
+                      </tr>
+                      <tr>
+                        <td>Donnerstag</td>
+                        <td>08:00–13:00 Uhr</td>
+                      </tr>
+                      <tr>
+                        <td>Freitag</td>
+                        <td>08:00–12:00 Uhr</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-block">
+              <div class="info-block__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="info-block__label">Parken &amp; Anreise</div>
+                <div class="info-block__value">
+                  Parkplätze direkt am Gebäude vorhanden.<br />
+                  Öffentlich: Straßenbahn Linie 2, Haltestelle Kriegshaberstraße.
+                  Barrierefrei zugänglich.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TERMIN & KONTAKT ── -->
+    <section id="kontakt" class="section section--dark">
+      <span id="termin" aria-hidden="true" style="position:absolute;"></span>
+      <div class="container">
+        <div class="kontakt-inner">
+
+          <!-- Links: Termin + Kontaktinfo -->
+          <div class="animate-on-scroll">
+            <span class="eyebrow-tag eyebrow-tag--white">Termin &amp; Kontakt</span>
+            <h2 class="section-headline section-headline--white">
+              Schnell zum<br />
+              <em>Kardiologen.</em>
+            </h2>
+            <p class="body-text body-text--white">
+              Facharzttermine innerhalb von 5 Werktagen – für Kassenpatienten
+              und Privatpatienten. Akute Beschwerden werden bevorzugt behandelt.
+              Oder schreiben Sie uns direkt an – wir antworten innerhalb eines Werktages.
+            </p>
+
+            <div class="termin-ctas" style="margin-top: 2rem;">
+              <a class="termin-option" href="tel:082199974310" aria-label="Jetzt anrufen: 0821 99974310">
+                <div class="termin-option__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 5.55 5.55l.96-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="termin-option__label">Telefon</div>
+                  <div class="termin-option__value">0821 99974310</div>
+                </div>
+              </a>
+
+              <div class="termin-option" style="cursor: default;">
+                <div class="termin-option__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div>
+                  <div class="termin-option__label">Online-Buchung</div>
+                  <div class="termin-option__value" style="font-size: 1rem;">Doctolib &amp; Online-Terminkalender</div>
+                </div>
+              </div>
+
+              <div class="termin-placeholder">
+                <p>Online-Terminbuchung wird in Kürze freigeschaltet.<br />Bis dahin freuen wir uns über Ihren Anruf.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rechts: Kontaktformular -->
+          <div class="animate-on-scroll delay-2">
+            <div class="kontakt-form kontakt-form--dark">
+              <form id="kontakt-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="form-name">
+                      Name <span aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="form-name"
+                      name="name"
+                      autocomplete="name"
+                      required
+                      aria-describedby="error-name"
+                      placeholder="Max Mustermann"
+                    />
+                    <span class="form-error-msg" id="error-name" role="alert">Bitte geben Sie Ihren Namen ein.</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="form-phone">Telefon</label>
+                    <input
+                      class="form-input"
+                      type="tel"
+                      id="form-phone"
+                      name="phone"
+                      autocomplete="tel"
+                      placeholder="0821 12345678"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="form-email">
+                    E-Mail <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="form-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                    aria-describedby="error-email"
+                    placeholder="max@beispiel.de"
+                  />
+                  <span class="form-error-msg" id="error-email" role="alert">Bitte geben Sie eine gültige E-Mail-Adresse ein.</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="form-message">
+                    Nachricht <span aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    class="form-textarea"
+                    id="form-message"
+                    name="message"
+                    rows="5"
+                    required
+                    aria-describedby="error-message"
+                    placeholder="Ihr Anliegen..."
+                  ></textarea>
+                  <span class="form-error-msg" id="error-message" role="alert">Bitte geben Sie Ihre Nachricht ein.</span>
+                </div>
+
+                <div class="form-checkbox-group">
+                  <input
+                    class="form-checkbox"
+                    type="checkbox"
+                    id="form-privacy"
+                    name="privacy"
+                    required
+                  />
+                  <label class="form-checkbox-label" for="form-privacy">
+                    Ich habe die <a href="#datenschutz">Datenschutzerklärung</a> gelesen und
+                    stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.
+                    <span aria-hidden="true" style="color: var(--color-accent);"> *</span>
+                  </label>
+                </div>
+
+                <button class="btn-primary form-submit" type="submit">
+                  Nachricht senden
+                  <span class="btn-icon-wrap" aria-hidden="true">↗</span>
+                </button>
+              </form>
+
+              <div class="form-success" id="form-success" role="status">
+                <div class="form-success__icon" aria-hidden="true">✓</div>
+                <h3 class="form-success__title">Vielen Dank!</h3>
+                <p class="form-success__text">
+                  Ihre Nachricht wurde gesendet. Wir melden uns in Kürze bei Ihnen.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="Logo.png" alt="Kardiologie Augsburg" />
+          <p class="footer-tagline">
+            Ihre Herzspezialisten in Augsburg.<br />
+            Kassenpatienten &amp; Privatpatienten willkommen.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links" role="list">
+            <li><a class="footer-link" href="#startseite">Startseite</a></li>
+            <li><a class="footer-link" href="#ueber-uns">Über uns</a></li>
+            <li><a class="footer-link" href="#leistungen">Leistungen</a></li>
+            <li><a class="footer-link" href="#team">Team</a></li>
+            <li><a class="footer-link" href="#news">Aktuelles</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Praxis</div>
+          <ul class="footer-links" role="list">
+            <li><a class="footer-link" href="#kontakt">Termin &amp; Kontakt</a></li>
+            <li><a class="footer-link" href="#anfahrt">Anfahrt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Kontakt</div>
+          <ul class="footer-links" role="list">
+            <li>
+              <a class="footer-link" href="tel:082199974310">0821 99974310</a>
+            </li>
+            <li>
+              <span class="footer-link" style="cursor: default;">
+                Ulmer Str. 160, Aufgang A<br />86156 Augsburg
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">
+          &copy; 2026 Kardiologie Augsburg. Alle Rechte vorbehalten.
+        </span>
+        <nav class="footer-legal" aria-label="Rechtliches">
+          <a href="#impressum" id="impressum">Impressum</a>
+          <a href="#datenschutz" id="datenschutz">Datenschutz</a>
+          <a href="#barrierefreiheit">Barrierefreiheit</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── ARZT-MODALS ── -->
+
+  <!-- Modal: Dr. Roland Tegtmeyer -->
+  <div id="modal-roland" class="arzt-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-roland-title" hidden>
+    <div class="arzt-modal">
+      <button class="arzt-modal__close" onclick="closeArztModal('roland')" aria-label="Schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="arzt-modal__header">
+        <img src="Roland.jpeg" alt="Dr. med. Roland Tegtmeyer" class="arzt-modal__photo" />
+        <div>
+          <span class="arzt-modal__label">Facharzt Innere Medizin &amp; Kardiologie</span>
+          <h2 id="modal-roland-title" class="arzt-modal__name">Dr. med. Roland Tegtmeyer</h2>
+          <p class="arzt-modal__specialty">Interventionelle Kardiologie · Intensiv- und Notfallmedizin</p>
+        </div>
+      </div>
+
+      <div class="arzt-modal__body">
+        <p class="arzt-modal__intro">
+          Gesundheit ist unser wertvollstes Gut – daher ist es Dr. Tegtmeyers Anspruch, jeden Patienten individuell und persönlich mit modernsten Geräten und großer Erfahrung im Bereich der Herz- und Gefäßmedizin zu betreuen. Als ehemaliger Oberarzt der Kardiologie am Universitätsklinikum Tübingen bringt er universitäre Spitzenmedizin unmittelbar in die Praxis.
+        </p>
+
+        <h3 class="arzt-modal__section-title">Curriculum Vitae</h3>
+        <div class="arzt-modal__cv">
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2005–2011</span>
+            <span class="arzt-modal__cv-text">Studium der Humanmedizin, LMU München</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2012–2018</span>
+            <span class="arzt-modal__cv-text">Assistenzarzt Kardiologie, Universitätsklinikum Tübingen</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2016</span>
+            <span class="arzt-modal__cv-text">Anerkennung Zusatzbezeichnung Notfallmedizin</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2018</span>
+            <span class="arzt-modal__cv-text">Facharztanerkennung Innere Medizin &amp; Kardiologie</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2018–2020</span>
+            <span class="arzt-modal__cv-text">Facharzt Kardiologie, Universitätsklinikum Tübingen</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2020–2026</span>
+            <span class="arzt-modal__cv-text">Oberarzt Kardiologie, Universitätsklinikum Tübingen</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2022</span>
+            <span class="arzt-modal__cv-text">Anerkennung Zusatzbezeichnung Intensivmedizin</span>
+          </div>
+          <div class="arzt-modal__cv-item arzt-modal__cv-item--current">
+            <span class="arzt-modal__cv-year">seit 2026</span>
+            <span class="arzt-modal__cv-text">Praxiseinstieg Kardiologie Sandrock und Partner, Augsburg</span>
+          </div>
+        </div>
+
+        <h3 class="arzt-modal__section-title">Schwerpunkte &amp; Qualifikationen</h3>
+        <ul class="arzt-modal__list">
+          <li>Interventionelle Kardiologie (Koronarangiographie, Stentimplantation, &gt;3.000 Eingriffe)</li>
+          <li>Zertifizierter Anwender Rotablation (Boston Scientific)</li>
+          <li>Echokardiographie (transthorakal &amp; transösophageal)</li>
+          <li>Herzinsuffizienztherapie und Device-Therapie</li>
+          <li>Intensiv- und Notfallmedizin (Zusatzbezeichnung)</li>
+          <li>Gründungsmitglied des Notarztvereins Tübingen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Dr. Christian Neumann -->
+  <div id="modal-christian" class="arzt-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-christian-title" hidden>
+    <div class="arzt-modal">
+      <button class="arzt-modal__close" onclick="closeArztModal('christian')" aria-label="Schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="arzt-modal__header">
+        <img src="christian.jpg" alt="Dr. med. Christian Neumann" class="arzt-modal__photo" />
+        <div>
+          <span class="arzt-modal__label">Facharzt Interventionelle Kardiologie</span>
+          <h2 id="modal-christian-title" class="arzt-modal__name">Dr. med. Christian Neumann</h2>
+          <p class="arzt-modal__specialty">ICD- und Schrittmachertherapie · Mitralklappeninterventionen</p>
+        </div>
+      </div>
+
+      <div class="arzt-modal__body">
+        <p class="arzt-modal__intro">
+          Dr. Neumann ist einer der erfahrensten interventionellen Kardiologen der Region. Sein besonderer Schwerpunkt liegt in der Herzrhythmustherapie – von der Implantation einfacher Herzschrittmacher bis hin zu komplexen ICD-Systemen und der Katheterablation. Darüber hinaus verfügt er über eine spezielle Expertise in minimalinvasiven Mitralklappeninterventionen.
+        </p>
+
+        <h3 class="arzt-modal__section-title">Curriculum Vitae</h3>
+        <div class="arzt-modal__cv">
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2000–2006</span>
+            <span class="arzt-modal__cv-text">Studium der Humanmedizin, RWTH Aachen</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2007–2013</span>
+            <span class="arzt-modal__cv-text">Assistenzarzt Innere Medizin &amp; Kardiologie, Universitätsklinikum Aachen</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2013</span>
+            <span class="arzt-modal__cv-text">Facharztanerkennung Innere Medizin &amp; Kardiologie</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2013–2019</span>
+            <span class="arzt-modal__cv-text">Oberarzt Kardiologie mit Schwerpunkt Elektrophysiologie &amp; Device-Therapie</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2017</span>
+            <span class="arzt-modal__cv-text">Zertifizierung interventionelle Mitralklappentherapie (MitraClip)</span>
+          </div>
+          <div class="arzt-modal__cv-item">
+            <span class="arzt-modal__cv-year">2019–2025</span>
+            <span class="arzt-modal__cv-text">Leitender Oberarzt Kardiologie, Klinikum Augsburg</span>
+          </div>
+          <div class="arzt-modal__cv-item arzt-modal__cv-item--current">
+            <span class="arzt-modal__cv-year">seit 2025</span>
+            <span class="arzt-modal__cv-text">Kardiologie Augsburg – Ihre Spezialisten (Praxisgründung)</span>
+          </div>
+        </div>
+
+        <h3 class="arzt-modal__section-title">Schwerpunkte &amp; Qualifikationen</h3>
+        <ul class="arzt-modal__list">
+          <li>Herzschrittmacher-Implantation und -Kontrolle (uni-, bi-, trikokulär)</li>
+          <li>ICD- und CRT-D-Therapie bei Herzinsuffizienz und malignen Arrhythmien</li>
+          <li>Interventionelle Mitralklappentherapie (MitraClip)</li>
+          <li>Elektrophysiologische Untersuchung und Katheterablation</li>
+          <li>Interventionelle Koronardiagnostik und -therapie</li>
+          <li>Mitglied der Deutschen Gesellschaft für Kardiologie (DGK)</li>
+          <li>Mitglied der European Society of Cardiology (ESC)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: News (shared, dynamically populated) -->
+  <div id="modal-news" class="arzt-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-news-title" hidden>
+    <div class="arzt-modal" style="max-width:560px;">
+      <button class="arzt-modal__close" onclick="closeNewsModal()" aria-label="Schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="news-modal__header">
+        <div class="news-modal__icon-wrap" id="modal-news-icon-wrap">
+          <svg id="modal-news-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="news-modal__meta">
+            <span class="news-modal__tag" id="modal-news-tag"></span>
+            <span class="news-modal__date" id="modal-news-date"></span>
+          </div>
+          <h2 class="news-modal__title" id="modal-news-title"></h2>
+        </div>
+      </div>
+      <div class="news-modal__body">
+        <p class="news-modal__text" id="modal-news-text"></p>
+        <a class="news-modal__doi-link" id="modal-news-doi" href="" target="_blank" rel="noopener" hidden>
+          Zur Originalstudie
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openArztModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      modal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      // Focus close button
+      setTimeout(() => modal.querySelector('.arzt-modal__close').focus(), 50);
+    }
+
+    function closeArztModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      modal.setAttribute('hidden', '');
+      document.body.style.overflow = '';
+    }
+
+    const NEWS_ICONS = {
+      heart:  '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+      ekg:    '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+      shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+    };
+
+    function openNewsModal(card) {
+      const d = card.dataset;
+      document.getElementById('modal-news-title').textContent = d.newsTitle || '';
+      document.getElementById('modal-news-tag').textContent   = d.newsTag   || '';
+      document.getElementById('modal-news-date').textContent  = d.newsDate  || '';
+      document.getElementById('modal-news-text').textContent  = d.newsText  || '';
+
+      const iconWrap = document.getElementById('modal-news-icon-wrap');
+      iconWrap.style.background = d.newsGradient || '';
+      document.getElementById('modal-news-icon').innerHTML = NEWS_ICONS[d.newsIcon] || NEWS_ICONS.heart;
+
+      const doiEl = document.getElementById('modal-news-doi');
+      const doi   = (d.newsDoi || '').trim();
+      doiEl.href  = doi;
+      doi ? doiEl.removeAttribute('hidden') : doiEl.setAttribute('hidden', '');
+
+      const modal = document.getElementById('modal-news');
+      modal.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => modal.querySelector('.arzt-modal__close').focus(), 50);
+    }
+
+    function closeNewsModal() {
+      document.getElementById('modal-news').setAttribute('hidden', '');
+      document.body.style.overflow = '';
+    }
+
+    // Close on backdrop click
+    document.querySelectorAll('.arzt-modal-backdrop').forEach(backdrop => {
+      backdrop.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.setAttribute('hidden', '');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Close on ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.arzt-modal-backdrop:not([hidden])').forEach(modal => {
+          modal.setAttribute('hidden', '');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
