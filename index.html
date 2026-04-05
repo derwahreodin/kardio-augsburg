@@ -616,128 +616,144 @@
       </div>
     </section>
 
-    <!-- ── NEWS / AKTUELLES ── -->
+    <!-- ── NEWS / KARDIOLOGIE UPDATE ── -->
     <section id="news" class="section section--surface">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="eyebrow-tag">Aktuelles</span>
+          <span class="eyebrow-tag">Wissenschaft aktuell</span>
           <h2 class="section-headline">
-            News aus der<br />
-            <em>Kardiologie</em>
+            Kardiologie<br />
+            <em>Update</em>
           </h2>
           <p class="body-text" style="margin-inline: auto;">
-            Aktuelle Studien, Praxisneuigkeiten und Informationen rund ums Herz.
+            Die wichtigsten kardiologischen Studien des Monats – kuratiert und kommentiert.
           </p>
         </div>
 
-        <div class="news-grid">
+        <!-- Masthead -->
+        <div class="news-masthead animate-on-scroll">
+          <div class="news-masthead__title-wrap">
+            <span class="news-masthead__title">Kardiologischer Monats-Digest</span>
+          </div>
+          <div class="news-masthead__bar">
+            <span class="news-masthead__edition">Ausgabe März 2026</span>
+            <span class="news-masthead__count">ACC.26 · New Orleans · 4 Originalarbeiten</span>
+            <span class="news-masthead__cat">Kardiologie · Innere Medizin</span>
+          </div>
+        </div>
+
+        <div class="news-digest-grid">
           <!-- NEWS-START -->
           <!-- News Card 1 -->
-          <article class="news-card animate-on-scroll"
-                   role="button" tabindex="0"
-                   onclick="openNewsModal(this)"
-                   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openNewsModal(this);}"
-                   data-news-title="Neue Praxis jetzt in Augsburg geöffnet"
-                   data-news-tag="Praxis"
-                   data-news-date="April 2026"
-                   data-news-gradient="linear-gradient(135deg, #e8f0fa, #d0e2f7)"
-                   data-news-icon="heart"
-                   data-news-doi=""
-                   data-news-text="Wir freuen uns, Ihnen unsere neue kardiologische Spezialpraxis an der Ulmer Straße 160 in Augsburg vorzustellen. Unser Team aus erfahrenen Fachärzten für Innere Medizin und Kardiologie bietet das gesamte Spektrum der modernen Herzmedizin – von der nichtinvasiven Diagnostik (EKG, Echokardiographie, Langzeit-Monitoring) bis zur interventionellen Therapie. Kassenpatienten und Privatpatienten sind herzlich willkommen. Termine können telefonisch unter 0821 99974310 vereinbart werden.">
-            <div class="news-card__image" aria-hidden="true">
-              <div class="news-card__image-bg"></div>
-              <div class="news-card__image-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
+          <div class="news-digest-card animate-on-scroll"
+               role="button" tabindex="0"
+               onclick="toggleDigest('digest-1')"
+               onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDigest('digest-1');}">
+            <div class="news-digest-card__badges">
+              <span class="news-badge news-badge--highlight">Highlight</span>
+              <span class="news-digest-card__topic">NEJM · Lungenembolie</span>
+            </div>
+            <div class="news-digest-card__content">
+              <h3 class="news-digest-card__title">Kathetergestützte Fibrinolyse bei Lungenembolie erstmals randomisiert belegt</h3>
+              <p class="news-digest-card__summary">Die HI-PEITHO-Studie zeigt erstmals randomisiert, dass ultraschallgestützte kathetergestützte Fibrinolyse bei intermediär-hochrisiko Lungenembolie kardiorespiratorische Komplikationen um über 60 % reduziert.</p>
+              <button class="news-digest-card__toggle" aria-label="Details einblenden" tabindex="-1">
+                <span>Mehr lesen</span>
+                <svg class="news-digest-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                <svg class="news-digest-chevron" id="chevron-digest-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </button>
+              <div id="digest-1" class="news-digest-expand">
+                <div class="news-digest-expand__content">
+                  <p><strong>Methode:</strong> 544 Patienten mit intermediär-hochrisiko-LE (RV-Dysfunktion + erhöhte Troponine), ultraschallgestützte kathetergestützte Fibrinolyse plus Antikoagulation vs. alleinige Antikoagulation.</p>
+                  <p><strong>Ergebnis:</strong> Primärer Endpunkt (PE-bedingter Tod, kardiorespiratorische Dekompensation oder Rezidiv innerhalb 30 Tage) um >60 % reduziert. Keine intrakraniellen Blutungen in beiden Gruppen.</p>
+                  <p><strong>Relevanz:</strong> Erste randomisierte Evidenz für kathetergestützte Therapie bei intermediär-hochrisiko-LE – Leitlinienänderung hin zu Klasse-I-Empfehlung erwartet.</p>
+                </div>
               </div>
             </div>
-            <div class="news-card__body">
-              <div class="news-card__meta">
-                <span class="news-card__date">April 2026</span>
-                <span class="news-card__tag">Praxis</span>
-              </div>
-              <h3 class="news-card__title">Neue Praxis jetzt in Augsburg geöffnet</h3>
-              <p class="news-card__excerpt">
-                Wir freuen uns, unsere moderne kardiologische Gemeinschaftspraxis
-                an der Ulmer Straße 160 vorzustellen. Kassenpatienten und
-                Privatpatienten sind herzlich willkommen.
-              </p>
-              <span class="news-card__link" aria-hidden="true">Details ansehen <span>→</span></span>
-            </div>
-          </article>
+          </div>
 
           <!-- News Card 2 -->
-          <article class="news-card animate-on-scroll delay-2"
-                   role="button" tabindex="0"
-                   onclick="openNewsModal(this)"
-                   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openNewsModal(this);}"
-                   data-news-title="CHAMPION-AF: WATCHMAN vs. NOAKs bei Vorhofflimmern"
-                   data-news-tag="Forschung"
-                   data-news-date="März 2026"
-                   data-news-gradient="linear-gradient(135deg, #e8f2f4, #d0e8f5)"
-                   data-news-icon="ekg"
-                   data-news-doi=""
-                   data-news-text="Die CHAMPION-AF-Studie vergleicht erstmals prospektiv den interventionellen Vorhofohrverschluss mit dem WATCHMAN FLX-Device mit einer optimierten NOAK-Therapie bei Patienten mit nicht-valvulärem Vorhofflimmern und erhöhtem Schlaganfallrisiko (CHA2DS2-VASc ≥2). In die randomisierte, kontrollierte Studie wurden über 3.000 Patienten eingeschlossen. Primärer Endpunkt ist das Komposit aus Schlaganfall, systemischer Embolie, ungeplanter Herzinsuffizienz-Hospitalisierung und kardiovaskulärem Tod. Die Ergebnisse liefern wichtige Daten für die Frage, wann ein interventioneller Vorhofohrverschluss der lebenslangen Antikoagulation vorzuziehen ist.">
-            <div class="news-card__image" aria-hidden="true">
-              <div class="news-card__image-bg" style="background: linear-gradient(135deg, #e8f2f4, #d0e8f5);"></div>
-              <div class="news-card__image-icon">
-                <svg viewBox="0 0 24 24">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                </svg>
+          <div class="news-digest-card animate-on-scroll delay-2"
+               role="button" tabindex="0"
+               onclick="toggleDigest('digest-2')"
+               onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDigest('digest-2');}">
+            <div class="news-digest-card__badges">
+              <span class="news-badge">ACC.26</span>
+              <span class="news-digest-card__topic">Vorhofflimmern</span>
+            </div>
+            <div class="news-digest-card__content">
+              <h3 class="news-digest-card__title">CHAMPION-AF: Vorhofohrverschluss nicht unterlegen gegenüber NOAK</h3>
+              <p class="news-digest-card__summary">3.000 Patienten: WATCHMAN FLX gleichwertig beim Schlaganfallschutz – und reduziert Blutungen signifikant.</p>
+              <button class="news-digest-card__toggle" aria-label="Details einblenden" tabindex="-1">
+                <span>Mehr lesen</span>
+                <svg class="news-digest-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                <svg class="news-digest-chevron" id="chevron-digest-2" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </button>
+              <div id="digest-2" class="news-digest-expand">
+                <div class="news-digest-expand__content">
+                  <p><strong>Methode:</strong> 3.000 Patienten, VHF, CHA₂DS₂-VASc ≥2, 1:1 LAAO vs. NOAK, 3 Jahre, 141 Zentren weltweit.</p>
+                  <p><strong>Ergebnis:</strong> Schlaganfall/Embolie: 5,7 % vs. 4,8 % – Nicht-Unterlegenheit erfüllt. Blutungen: 10,9 % vs. 19,0 % (HR 0,55; p &lt;0,001).</p>
+                  <p><strong>Relevanz:</strong> Größte LAAO-Studie; signifikante Blutungsreduktion, kein Überlegenheitsnachweis beim Schlaganfallschutz. Entscheidungshilfe für individualisierte Antikoagulationstherapie.</p>
+                </div>
               </div>
             </div>
-            <div class="news-card__body">
-              <div class="news-card__meta">
-                <span class="news-card__date">März 2026</span>
-                <span class="news-card__tag">Forschung</span>
-              </div>
-              <h3 class="news-card__title">CHAMPION-AF: WATCHMAN vs. NOAKs bei Vorhofflimmern</h3>
-              <p class="news-card__excerpt">
-                Die CHAMPION-AF-Studie vergleicht erstmals prospektiv den
-                Vorhofohrverschluss mit dem WATCHMAN-Device mit einer
-                NOAK-Therapie bei Vorhofflimmernpatienten.
-              </p>
-              <span class="news-card__link" aria-hidden="true">Details ansehen <span>→</span></span>
-            </div>
-          </article>
+          </div>
 
           <!-- News Card 3 -->
-          <article class="news-card animate-on-scroll delay-4"
-                   role="button" tabindex="0"
-                   onclick="openNewsModal(this)"
-                   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openNewsModal(this);}"
-                   data-news-title="Herzgesundheit beginnt im Alltag"
-                   data-news-tag="Prävention"
-                   data-news-date="Februar 2026"
-                   data-news-gradient="linear-gradient(135deg, #f0f4e8, #d8efd0)"
-                   data-news-icon="shield"
-                   data-news-doi=""
-                   data-news-text="Unser kardiovaskuläres Präventionsprogramm umfasst eine strukturierte Risikostratifizierung mit dem SCORE2-Algorithmus der European Society of Cardiology. Neben klassischen Risikofaktoren (Blutdruck, Cholesterin, Blutzucker, Rauchstatus) bieten wir erweiterte Diagnostik wie Karotis-Doppler-Sonographie und Belastungs-EKG an. Auf Basis Ihres individuellen Risikoprofils erstellen wir einen maßgeschneiderten Präventionsplan mit konkreten Lebensstilempfehlungen und – wenn erforderlich – medikamentöser Therapie. Vereinbaren Sie jetzt Ihren persönlichen Herzgesundheits-Check unter 0821 99974310.">
-            <div class="news-card__image" aria-hidden="true">
-              <div class="news-card__image-bg" style="background: linear-gradient(135deg, #f0f4e8, #d8efd0);"></div>
-              <div class="news-card__image-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
+          <div class="news-digest-card animate-on-scroll delay-4"
+               role="button" tabindex="0"
+               onclick="toggleDigest('digest-3')"
+               onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDigest('digest-3');}">
+            <div class="news-digest-card__badges">
+              <span class="news-badge">NEJM</span>
+              <span class="news-digest-card__topic">Prävention · Lipide</span>
+            </div>
+            <div class="news-digest-card__content">
+              <h3 class="news-digest-card__title">VESALIUS-CV: Evolocumab wirksam in der Hochrisiko-Primärprävention</h3>
+              <p class="news-digest-card__summary">PCSK9-Inhibition reduzierte MACE um 28 % bei Patienten ohne vorherigen Herzinfarkt oder Schlaganfall.</p>
+              <button class="news-digest-card__toggle" aria-label="Details einblenden" tabindex="-1">
+                <span>Mehr lesen</span>
+                <svg class="news-digest-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                <svg class="news-digest-chevron" id="chevron-digest-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </button>
+              <div id="digest-3" class="news-digest-expand">
+                <div class="news-digest-expand__content">
+                  <p><strong>Methode:</strong> ~12.000 Patienten ohne vorherigen MI/Schlaganfall, Evolocumab vs. Plazebo, ~4,8 Jahre Follow-up.</p>
+                  <p><strong>Ergebnis:</strong> MACE: 7,6 % vs. 10,5 % (−28 %); Gesamtmortalität: 7,8 % vs. 10,1 %.</p>
+                  <p><strong>Relevanz:</strong> Öffnet die Tür für PCSK9-Inhibitoren in der erweiterten Primärprävention – bisher waren sie nur für Sekundärprävention zugelassen.</p>
+                </div>
               </div>
             </div>
-            <div class="news-card__body">
-              <div class="news-card__meta">
-                <span class="news-card__date">Februar 2026</span>
-                <span class="news-card__tag">Prävention</span>
-              </div>
-              <h3 class="news-card__title">Herzgesundheit beginnt im Alltag – unser Präventionsprogramm</h3>
-              <p class="news-card__excerpt">
-                Unser kardiovaskuläres Risiko-Checkup mit SCORE-Stratifizierung
-                hilft, Herzerkrankungen frühzeitig zu erkennen und gezielt
-                gegenzusteuern.
-              </p>
-              <span class="news-card__link" aria-hidden="true">Details ansehen <span>→</span></span>
+          </div>
+          <!-- News Card 4 -->
+          <div class="news-digest-card animate-on-scroll delay-4"
+               role="button" tabindex="0"
+               onclick="toggleDigest('digest-4')"
+               onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleDigest('digest-4');}">
+            <div class="news-digest-card__badges">
+              <span class="news-badge news-badge--negative">Negativstudie</span>
+              <span class="news-digest-card__topic">Herzinsuffizienz</span>
             </div>
-          </article>
+            <div class="news-digest-card__content">
+              <h3 class="news-digest-card__title">SPIRIT-HF: Spironolacton ohne signifikanten Nutzen bei HFpEF</h3>
+              <p class="news-digest-card__summary">Kein Gesamtnutzen und erhöhtes Nebenwirkungsprofil – die ESC-Leitlinienempfehlung für Spironolacton bei Herzinsuffizienz mit erhaltener Pumpfunktion gerät unter Druck.</p>
+              <button class="news-digest-card__toggle" aria-label="Details einblenden" tabindex="-1">
+                <span>Mehr lesen</span>
+                <svg class="news-digest-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                <svg class="news-digest-chevron" id="chevron-digest-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </button>
+              <div id="digest-4" class="news-digest-expand">
+                <div class="news-digest-expand__content">
+                  <p><strong>Methode:</strong> 730 Patienten (Ø 78 J., 50 % Frauen) mit HFpEF/HFmrEF, Spironolacton vs. Plazebo, 24 Monate, europäische Zentren.</p>
+                  <p><strong>Ergebnis:</strong> 10,8 vs. 12,7 Ereignisse/100 Patientenjahre – kein signifikanter Unterschied. Mehr Hyperkaliämie und Nierenereignisse unter Spironolacton.</p>
+                  <p><strong>Relevanz:</strong> Gepoolte Metaanalyse mit TOPCAT bestätigt keinen Nutzen. Klasse-IIb-Empfehlung der ESC-Leitlinie zur Diskussion.</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- NEWS-END -->
         </div>
+
+        <p class="news-disclaimer">Die Zusammenfassungen basieren auf öffentlich zugänglichen Abstracts, Pressemitteilungen und Kongressberichten. Es werden keine Originaltexte der Verlage reproduziert.</p>
       </div>
     </section>
 
@@ -1219,41 +1235,6 @@
     </div>
   </div>
 
-  <!-- Modal: News (shared, dynamically populated) -->
-  <div id="modal-news" class="arzt-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-news-title" hidden>
-    <div class="arzt-modal" style="max-width:560px;">
-      <button class="arzt-modal__close" onclick="closeNewsModal()" aria-label="Schließen">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-      <div class="news-modal__header">
-        <div class="news-modal__icon-wrap" id="modal-news-icon-wrap">
-          <svg id="modal-news-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="news-modal__meta">
-            <span class="news-modal__tag" id="modal-news-tag"></span>
-            <span class="news-modal__date" id="modal-news-date"></span>
-          </div>
-          <h2 class="news-modal__title" id="modal-news-title"></h2>
-        </div>
-      </div>
-      <div class="news-modal__body">
-        <p class="news-modal__text" id="modal-news-text"></p>
-        <a class="news-modal__doi-link" id="modal-news-doi" href="" target="_blank" rel="noopener" hidden>
-          Zur Originalstudie
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <script>
     function openArztModal(id) {
       const modal = document.getElementById('modal-' + id);
@@ -1269,37 +1250,12 @@
       document.body.style.overflow = '';
     }
 
-    const NEWS_ICONS = {
-      heart:  '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
-      ekg:    '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
-      shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
-    };
-
-    function openNewsModal(card) {
-      const d = card.dataset;
-      document.getElementById('modal-news-title').textContent = d.newsTitle || '';
-      document.getElementById('modal-news-tag').textContent   = d.newsTag   || '';
-      document.getElementById('modal-news-date').textContent  = d.newsDate  || '';
-      document.getElementById('modal-news-text').textContent  = d.newsText  || '';
-
-      const iconWrap = document.getElementById('modal-news-icon-wrap');
-      iconWrap.style.background = d.newsGradient || '';
-      document.getElementById('modal-news-icon').innerHTML = NEWS_ICONS[d.newsIcon] || NEWS_ICONS.heart;
-
-      const doiEl = document.getElementById('modal-news-doi');
-      const doi   = (d.newsDoi || '').trim();
-      doiEl.href  = doi;
-      doi ? doiEl.removeAttribute('hidden') : doiEl.setAttribute('hidden', '');
-
-      const modal = document.getElementById('modal-news');
-      modal.removeAttribute('hidden');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => modal.querySelector('.arzt-modal__close').focus(), 50);
-    }
-
-    function closeNewsModal() {
-      document.getElementById('modal-news').setAttribute('hidden', '');
-      document.body.style.overflow = '';
+    function toggleDigest(id) {
+      const panel   = document.getElementById(id);
+      const chevron = document.getElementById('chevron-' + id);
+      const isOpen  = panel.classList.contains('open');
+      panel.classList.toggle('open', !isOpen);
+      if (chevron) chevron.classList.toggle('rotated', !isOpen);
     }
 
     // Close on backdrop click

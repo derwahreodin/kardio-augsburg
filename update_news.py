@@ -99,52 +99,62 @@ def html_escape(text: str) -> str:
     )
 
 
+BADGE_CLASSES = {
+    "highlight": "news-badge news-badge--highlight",
+    "negativ":   "news-badge news-badge--negative",
+    "studie":    "news-badge",
+}
+
 def render_card(studie: dict, index: int) -> str:
-    """Rendert eine News-Karte als HTML mit data-* Attributen für den Modal."""
-    delay    = DELAYS[index % 3]
-    style    = style_fuer(studie.get("tag", ""))
-    titel    = html_escape(studie.get("titel", "—"))
-    datum    = html_escape(studie.get("datum", ""))
-    tag      = html_escape(studie.get("tag", "Forschung"))
-    excerpt  = html_escape(studie.get("zusammenfassung", ""))
-    volltext = html_escape(studie.get("volltext", studie.get("zusammenfassung", "")))
-    doi_url  = html_escape(studie.get("doi", "").strip())
-    icon_key = style["key"]
-    gradient = style["gradient"]
+    """Rendert eine News-Akkordeon-Karte als HTML."""
+    delay       = DELAYS[index % 3]
+    card_id     = f"digest-auto-{index + 1}"
+    chevron_id  = f"chevron-{card_id}"
+    featured    = (studie.get("badge_typ", "") == "highlight" or index == 0)
+    badge_cls   = BADGE_CLASSES.get(studie.get("badge_typ", "studie"), "news-badge")
+    badge       = html_escape(studie.get("badge", ""))
+    thema       = html_escape(studie.get("thema", ""))
+    titel       = html_escape(studie.get("titel", "—"))
+    summary     = html_escape(studie.get("zusammenfassung", ""))
+    methode     = html_escape(studie.get("methode", ""))
+    ergebnis    = html_escape(studie.get("ergebnis", ""))
+    relevanz    = html_escape(studie.get("relevanz", ""))
+
+    featured_cls  = " news-digest-card--featured" if featured else ""
+    inner_open    = '<div class="news-digest-card__inner"><div class="news-digest-card__accent" aria-hidden="true"></div><div class="news-digest-card__content">' if featured else '<div class="news-digest-card__content">'
+    inner_close   = '</div></div>' if featured else '</div>'
+
+    arrow_svg  = '<svg class="news-digest-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>'
+    chevron_svg = f'<svg class="news-digest-chevron" id="{chevron_id}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>'
+    toggle_label = "Zusammenfassung lesen" if featured else "Mehr lesen"
 
     return f"""\
           <!-- News Card {index + 1} -->
-          <article class="news-card animate-on-scroll{delay}"
-                   role="button" tabindex="0"
-                   onclick="openNewsModal(this)"
-                   onkeydown="if(event.key==='Enter'||event.key===' '){{event.preventDefault();openNewsModal(this);}}"
-                   data-news-title="{titel}"
-                   data-news-tag="{tag}"
-                   data-news-date="{datum}"
-                   data-news-gradient="{gradient}"
-                   data-news-icon="{icon_key}"
-                   data-news-doi="{doi_url}"
-                   data-news-text="{volltext}">
-            <div class="news-card__image" aria-hidden="true">
-              <div class="news-card__image-bg" style="background: {gradient};"></div>
-              <div class="news-card__image-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  {style['icon']}
-                </svg>
-              </div>
+          <div class="news-digest-card{featured_cls} animate-on-scroll{delay}"
+               role="button" tabindex="0"
+               onclick="toggleDigest('{card_id}')"
+               onkeydown="if(event.key==='Enter'||event.key===' '){{event.preventDefault();toggleDigest('{card_id}');}}">
+            <div class="news-digest-card__badges">
+              <span class="{badge_cls}">{badge}</span>
+              <span class="news-digest-card__topic">{thema}</span>
             </div>
-            <div class="news-card__body">
-              <div class="news-card__meta">
-                <span class="news-card__date">{datum}</span>
-                <span class="news-card__tag">{tag}</span>
+            {inner_open}
+              <h3 class="news-digest-card__title">{titel}</h3>
+              <p class="news-digest-card__summary">{summary}</p>
+              <button class="news-digest-card__toggle" aria-label="Details einblenden" tabindex="-1">
+                <span>{toggle_label}</span>
+                {arrow_svg}
+                {chevron_svg}
+              </button>
+              <div id="{card_id}" class="news-digest-expand">
+                <div class="news-digest-expand__content">
+                  <p><strong>Methode:</strong> {methode}</p>
+                  <p><strong>Ergebnis:</strong> {ergebnis}</p>
+                  <p><strong>Relevanz:</strong> {relevanz}</p>
+                </div>
               </div>
-              <h3 class="news-card__title">{titel}</h3>
-              <p class="news-card__excerpt">
-                {excerpt}
-              </p>
-              <span class="news-card__link" aria-hidden="true">Details ansehen <span>→</span></span>
-            </div>
-          </article>"""
+            {inner_close}
+          </div>"""
 
 
 def patch_html(cards_html: str, dry_run: bool = False) -> None:
@@ -199,14 +209,17 @@ Regeln:
 Antworte mit exakt diesem JSON:
 {{
   "monat": "{monat_str}",
+  "masthead_count": "z.B. ACC.26 · 3 Originalarbeiten",
   "studien": [
     {{
-      "titel": "Studientitel auf Deutsch (max. 90 Zeichen)",
-      "datum": "{monat_str}",
-      "tag": "Kategorie (Intervention | Herzinsuffizienz | Rhythmus | Prävention | Forschung)",
-      "zusammenfassung": "2 Sätze: Kernaussage der Studie, patientenverständlich.",
-      "volltext": "4-5 Sätze: Studiendesign, Patientengruppe, primärer Endpunkt, Hauptergebnis mit Zahlenwert (HR/OR/%, p-Wert), klinische Schlussfolgerung und Praxisrelevanz. Auf Deutsch, für Kardiologen.",
-      "doi": "https://doi.org/... (leer lassen wenn nicht sicher)"
+      "titel": "Studienname: Aussage auf Deutsch (max. 90 Zeichen)",
+      "badge": "Journalname oder Kongress (z.B. NEJM | ACC.26 | Circulation | JACC)",
+      "badge_typ": "highlight (nur für die wichtigste Studie) | studie | negativ",
+      "thema": "Fachgebiet (z.B. Vorhofflimmern | Herzinsuffizienz | Prävention · Lipide)",
+      "zusammenfassung": "2 prägnante Sätze: Studiendesign/Population + Kernergebnis. Für Fachärzte.",
+      "methode": "2-3 Sätze: Design, Patientenzahl, primärer Endpunkt, Follow-up, Vergleichsarm.",
+      "ergebnis": "2-3 Sätze: Hauptergebnis mit HR/OR/%, 95%-KI, p-Wert. Sekundäre Endpunkte falls relevant.",
+      "relevanz": "2 Sätze: Praxisrelevanz, Leitlinienimplikationen und ggf. Einschränkungen."
     }}
   ]
 }}"""
