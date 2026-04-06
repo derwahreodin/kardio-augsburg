@@ -109,8 +109,11 @@
         <img src="empfang.jpg" alt="" loading="eager" fetchpriority="high" />
       </div>
 
-      <!-- Three.js Dot-Overlay -->
-      <canvas id="dotted-surface" aria-hidden="true"></canvas>
+      <!-- Falling Pattern Overlay -->
+      <div id="falling-pattern" aria-hidden="true">
+        <div id="falling-pattern-bg"></div>
+        <div id="falling-pattern-blur"></div>
+      </div>
 
       <!-- Dunkles Overlay -->
       <div class="hero-overlay" aria-hidden="true"></div>
@@ -1279,8 +1282,6 @@
     });
   </script>
 
-  <!-- Three.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <!-- Main JS -->
   <script src="js/main.js"></script>
 </body>
