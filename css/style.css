@@ -259,15 +259,15 @@ button {
 }
 
 .section--light {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .section--surface {
-  background: var(--color-surface);
+  background: rgba(244, 247, 250, 0.88);
 }
 
 .section--dark {
-  background: var(--color-ink);
+  background: rgba(13, 31, 45, 0.96);
 }
 
 .section--primary {
@@ -590,6 +590,7 @@ button {
 /* Falling Pattern — Hintergrund ab Leistungen */
 .falling-pattern-wrapper {
   position: relative;
+  overflow: hidden;
 }
 
 #falling-pattern {
@@ -597,7 +598,7 @@ button {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  opacity: 0.5;
+  opacity: 0.55;
   pointer-events: none;
 }
 
@@ -695,8 +696,8 @@ button {
 #falling-pattern-blur {
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(0.6em);
-  background-image: radial-gradient(circle at 50% 50%, transparent 0, transparent 2px, rgba(0,0,0,0.04) 2px);
+  /* backdrop-filter entfernt — verursacht Bleed in Hero (Browser-Bug) */
+  background-image: radial-gradient(circle at 50% 50%, transparent 0, transparent 2px, rgba(0,0,0,0.03) 2px);
   background-size: 8px 8px;
 }
 
