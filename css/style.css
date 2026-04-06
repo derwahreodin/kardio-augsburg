@@ -2817,7 +2817,7 @@ footer {
 /* ── Timeline wrapper ── */
 .sp-timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 920px;
   margin: 4rem auto 0;
 }
 
@@ -2832,12 +2832,12 @@ footer {
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    var(--color-primary) 8%,
-    var(--color-primary) 92%,
+    var(--color-primary) 6%,
+    var(--color-primary) 94%,
     transparent 100%
   );
   transform: translateX(-50%);
-  opacity: 0.25;
+  opacity: 0.2;
 }
 
 /* ── Year markers ── */
@@ -2854,6 +2854,10 @@ footer {
   color: var(--color-primary);
 }
 
+.sp-timeline__year-marker:first-child {
+  margin-top: 0;
+}
+
 .sp-timeline__year-marker::before,
 .sp-timeline__year-marker::after {
   content: '';
@@ -2862,37 +2866,15 @@ footer {
   background: var(--color-border);
 }
 
-.sp-timeline__year-marker:first-child {
-  margin-top: 0;
-}
-
 /* ── Individual entry ── */
 .sp-timeline__entry {
   position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-  margin-bottom: 3rem;
+  display: block;
+  margin-bottom: 2.5rem;
+  min-height: 3.5rem; /* ensure node has room */
 }
 
-/* All entries: default card on the left */
-.sp-timeline__entry .sp-timeline__card {
-  width: calc(50% - 3rem);
-  margin-right: calc(50% + 3rem);
-}
-
-/* Alternating: even entries flip to the right */
-.sp-timeline__entry:nth-of-type(even) .sp-timeline__card {
-  margin-right: 0;
-  margin-left: calc(50% + 3rem);
-  text-align: right;
-}
-
-.sp-timeline__entry:nth-of-type(even) .sp-timeline__meta {
-  justify-content: flex-end;
-}
-
-/* ── Timeline node (circle icon) ── */
+/* ── Timeline node ── */
 .sp-timeline__node {
   position: absolute;
   left: 50%;
@@ -2905,14 +2887,14 @@ footer {
   align-items: center;
   justify-content: center;
   background: var(--color-white);
-  border: 3px solid var(--color-primary);
+  border: 2.5px solid var(--color-primary);
   box-shadow: var(--shadow-sm);
   z-index: 3;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .sp-timeline__entry:hover .sp-timeline__node {
-  transform: translateX(-50%) scale(1.1);
+  transform: translateX(-50%) scale(1.12);
   box-shadow: var(--shadow-md);
 }
 
@@ -2936,14 +2918,38 @@ footer {
   stroke: var(--color-ink-muted);
 }
 
+/* ── LEFT entries: card on the left half ── */
+.sp-timeline__entry--left .sp-timeline__card {
+  width: calc(50% - 2.5rem);
+  /* no margin-left: starts from left edge */
+}
+
+/* ── RIGHT entries: card on the right half ── */
+.sp-timeline__entry--right .sp-timeline__card {
+  width: calc(50% - 2.5rem);
+  margin-left: calc(50% + 2.5rem);
+  text-align: right;
+}
+
+.sp-timeline__entry--right .sp-timeline__meta {
+  justify-content: flex-end;
+}
+
+/* RIGHT entries: hover content always left-aligned for readability */
+.sp-timeline__entry--right .sp-timeline__location-hover,
+.sp-timeline__entry--right .sp-timeline__team-tooltip {
+  text-align: left;
+}
+
 /* ── Card ── */
 .sp-timeline__card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: box-shadow var(--transition), transform var(--transition);
+  cursor: default;
 }
 
 .sp-timeline__entry:hover .sp-timeline__card {
@@ -2951,24 +2957,24 @@ footer {
   transform: translateY(-2px);
 }
 
-/* ── Meta row (badge + date) ── */
+/* ── Meta row ── */
 .sp-timeline__meta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   flex-wrap: wrap;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 /* ── Badge ── */
 .sp-timeline__badge {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  padding: 0.2rem 0.75rem;
+  padding: 0.18rem 0.7rem;
   border-radius: var(--radius-pill);
 }
 
@@ -3000,18 +3006,146 @@ footer {
 /* ── Title ── */
 .sp-timeline__title {
   font-family: var(--font-serif);
-  font-size: var(--size-lg);
+  font-size: var(--size-md);
   color: var(--color-primary);
   line-height: 1.3;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.3rem;
 }
 
-/* ── Body text ── */
+/* ── Brief text ── */
 .sp-timeline__text {
   font-family: var(--font-sans);
   font-size: var(--size-sm);
   color: var(--color-ink-muted);
-  line-height: 1.65;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* ── Hover hint ── */
+.sp-timeline__hover-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: var(--size-xs);
+  color: var(--color-ink-faint);
+  margin-top: 0.5rem;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.sp-timeline__hover-hint svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+
+.sp-timeline__card:hover .sp-timeline__hover-hint {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Team tooltip (expand on hover) ── */
+.sp-timeline__team-tooltip {
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.32s ease, opacity 0.25s ease, margin-top 0.25s ease;
+  border-top: 1px solid transparent;
+}
+
+.sp-timeline__card--team:hover .sp-timeline__team-tooltip,
+.sp-timeline__card--team.is-open .sp-timeline__team-tooltip {
+  max-height: 280px;
+  opacity: 1;
+  margin-top: 0.75rem;
+  border-top-color: var(--color-border);
+  padding-top: 0.5rem;
+}
+
+.sp-timeline__team-tooltip li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--size-sm);
+  color: var(--color-ink);
+}
+
+.sp-timeline__team-tooltip li:last-child {
+  border-bottom: none;
+}
+
+.sp-timeline__team-tooltip li span {
+  color: var(--color-ink-faint);
+  font-size: var(--size-xs);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── Location hover panel ── */
+.sp-timeline__location-hover {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  border-top: 1px solid transparent;
+}
+
+.sp-timeline__card--location:hover .sp-timeline__location-hover,
+.sp-timeline__card--location.is-open .sp-timeline__location-hover {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 0.75rem;
+  border-top-color: var(--color-border);
+  padding-top: 0.75rem;
+}
+
+.sp-timeline__hover-desc {
+  font-family: var(--font-sans);
+  font-size: var(--size-sm);
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* Map container */
+.sp-timeline__map-wrap {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  height: 150px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.sp-map-frame {
+  width: 100%;
+  height: 150px;
+  border: none;
+  display: block;
+}
+
+/* Link */
+.sp-timeline__hover-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--size-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.sp-timeline__hover-link:hover {
+  color: var(--color-primary-dk);
+  border-color: var(--color-primary-dk);
 }
 
 /* ── Source note ── */
@@ -3028,44 +3162,57 @@ footer {
   text-underline-offset: 3px;
 }
 
-/* ── MOBILE: single-column with left line ── */
+/* ═══════════════════════════════
+   MOBILE: single column, left line
+═══════════════════════════════ */
 @media (max-width: 767px) {
   .sp-timeline::before {
     left: 1.5rem;
     transform: none;
   }
 
-  .sp-timeline__year-marker::before { display: none; }
-  .sp-timeline__year-marker::after  { display: none; }
   .sp-timeline__year-marker {
-    display: block;
     padding-left: 4rem;
-    margin-left: 0;
+    font-size: var(--size-base);
   }
 
-  .sp-timeline__entry,
-  .sp-timeline__entry:nth-child(odd),
-  .sp-timeline__entry:nth-child(even) {
-    flex-direction: column;
+  .sp-timeline__year-marker::before {
+    display: none;
+  }
+
+  .sp-timeline__year-marker::after {
+    flex: 1;
   }
 
   .sp-timeline__node {
     left: 1.5rem;
-    transform: translateX(-50%);
   }
 
   .sp-timeline__entry:hover .sp-timeline__node {
     transform: translateX(-50%) scale(1.1);
   }
 
-  .sp-timeline__entry .sp-timeline__card,
-  .sp-timeline__entry:nth-of-type(even) .sp-timeline__card {
+  /* All cards: single column to the right of the line */
+  .sp-timeline__entry--left .sp-timeline__card,
+  .sp-timeline__entry--right .sp-timeline__card {
     width: auto;
-    margin: 0 0 0 4rem;
+    margin-left: 4rem;
+    margin-right: 0;
     text-align: left;
   }
 
-  .sp-timeline__entry:nth-of-type(even) .sp-timeline__meta {
+  .sp-timeline__entry--right .sp-timeline__meta {
     justify-content: flex-start;
   }
+
+  /* Hide map on mobile – show text + link only */
+  .sp-timeline__map-wrap {
+    display: none;
+  }
+
+  /* Tap to open on touch devices */
+  .sp-timeline__card {
+    cursor: pointer;
+  }
 }
+
