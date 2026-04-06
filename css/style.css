@@ -254,6 +254,8 @@ button {
 
 .section {
   padding-block: var(--space-3xl);
+  position: relative;
+  z-index: 1;
 }
 
 .section--light {
@@ -585,13 +587,18 @@ button {
   100% { transform: scale(1.14) translate(-1.8%,  -0.3%); }
 }
 
-/* Falling Pattern — ersetzt Three.js Canvas */
+/* Falling Pattern — Hintergrund ab Leistungen */
+.falling-pattern-wrapper {
+  position: relative;
+}
+
 #falling-pattern {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
-  opacity: 0.6;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 #falling-pattern-bg {
