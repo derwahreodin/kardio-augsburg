@@ -3131,41 +3131,26 @@ footer {
 .sp-schematic-map {
   display: block;
   width: 100%;
-  max-width: 140px;
+  max-width: 160px;
   height: auto;
   margin: 0 auto;
 }
 
-/* Dark fill inside Germany */
-.sp-de-fill {
-  fill: #0b1d3c;
-  stroke: none;
-}
-
-/* Internal state border lines */
-.sp-int-borders {
-  fill: none;
-  stroke: #18c6ee;
-  stroke-width: 0.7;
-  stroke-opacity: 0.75;
-  filter: drop-shadow(0 0 1.5px #00ccff) drop-shadow(0 0 3px rgba(0,180,240,0.5));
-}
-
-/* Outer country border – brighter glow */
-.sp-de-outline {
-  fill: none;
-  stroke: #28dcff;
-  stroke-width: 1.3;
+/* Each federal state – dark fill, cyan glow border */
+.sp-state {
+  fill: #0e2248;
+  stroke: #1ee0ff;
+  stroke-width: 0.5;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 2px #00d4ff) drop-shadow(0 0 6px rgba(0,160,220,0.7));
+  filter: drop-shadow(0 0 1px #00c8ef) drop-shadow(0 0 3px rgba(0,180,235,0.4));
 }
 
 /* Location marker – red glow dot */
 .sp-map-marker {
-  fill: #ff2d55;
+  fill: #ff3055;
   stroke: #fff;
-  stroke-width: 1;
-  filter: drop-shadow(0 0 3px #ff2d55) drop-shadow(0 0 7px rgba(255,45,85,0.7));
+  stroke-width: 1.2;
+  filter: drop-shadow(0 0 4px #ff3055) drop-shadow(0 0 9px rgba(255,48,85,0.75));
 }
 
 /* Link */
