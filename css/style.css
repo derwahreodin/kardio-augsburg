@@ -587,10 +587,10 @@ button {
   100% { transform: scale(1.14) translate(-1.8%,  -0.3%); }
 }
 
-/* Falling Pattern — Hintergrund ab Leistungen
-   Originalgetreu vom 21st.dev-Prompt: 12 Spaltengruppen (je 2 Linien + 1 Punkt),
-   versetzt durch background-position. GPU-smooth via translateY statt background-position.
-   Alle background-size-Y = 300px → translateY(300px) = nahtloser Loop. */
+/* Falling Pattern — originalgetreu nach 21st.dev-Prompt
+   12 Spalten × 3 Layer (Linie A, Linie B, Punkt) = 36 Layer.
+   Tile-Höhen variieren (235–299px) → organisch versetzter Rhythmus.
+   Animation via background-position (Start→End), 120s linear. */
 .falling-pattern-wrapper {
   position: relative;
   isolation: isolate;
@@ -602,97 +602,102 @@ button {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  opacity: 0.9;
+  opacity: 1;
   pointer-events: none;
 }
 
 #falling-pattern-bg {
   position: absolute;
-  top: -300px;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 600px);
-  /* 12 Gruppen × 3 Gradienten = 36 Layer.
-     Jede Gruppe: Linie A (x), Linie B (x+3px), Punkt (x+1.5px, mittig).
-     Spalten-X: 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275 */
+  inset: 0;
   background-image:
-    /* G1 */ radial-gradient(4px 100px at 0px   150px, rgba(46,135,200,0.80), transparent),
-             radial-gradient(4px 100px at 3px   150px, rgba(46,135,200,0.80), transparent),
-             radial-gradient(1.5px 1.5px at 1.5px   150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G2 */ radial-gradient(4px 100px at 25px  150px, rgba(46,135,200,0.65), transparent),
-             radial-gradient(4px 100px at 28px  150px, rgba(46,135,200,0.65), transparent),
-             radial-gradient(1.5px 1.5px at 26.5px  150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G3 */ radial-gradient(4px 100px at 50px  150px, rgba(46,135,200,0.75), transparent),
-             radial-gradient(4px 100px at 53px  150px, rgba(46,135,200,0.75), transparent),
-             radial-gradient(1.5px 1.5px at 51.5px  150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G4 */ radial-gradient(4px 100px at 75px  150px, rgba(46,135,200,0.70), transparent),
-             radial-gradient(4px 100px at 78px  150px, rgba(46,135,200,0.70), transparent),
-             radial-gradient(1.5px 1.5px at 76.5px  150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G5 */ radial-gradient(4px 100px at 100px 150px, rgba(46,135,200,0.80), transparent),
-             radial-gradient(4px 100px at 103px 150px, rgba(46,135,200,0.80), transparent),
-             radial-gradient(1.5px 1.5px at 101.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G6 */ radial-gradient(4px 100px at 125px 150px, rgba(46,135,200,0.60), transparent),
-             radial-gradient(4px 100px at 128px 150px, rgba(46,135,200,0.60), transparent),
-             radial-gradient(1.5px 1.5px at 126.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G7 */ radial-gradient(4px 100px at 150px 150px, rgba(46,135,200,0.70), transparent),
-             radial-gradient(4px 100px at 153px 150px, rgba(46,135,200,0.70), transparent),
-             radial-gradient(1.5px 1.5px at 151.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G8 */ radial-gradient(4px 100px at 175px 150px, rgba(46,135,200,0.85), transparent),
-             radial-gradient(4px 100px at 178px 150px, rgba(46,135,200,0.85), transparent),
-             radial-gradient(1.5px 1.5px at 176.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G9 */ radial-gradient(4px 100px at 200px 150px, rgba(46,135,200,0.65), transparent),
-             radial-gradient(4px 100px at 203px 150px, rgba(46,135,200,0.65), transparent),
-             radial-gradient(1.5px 1.5px at 201.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G10*/ radial-gradient(4px 100px at 225px 150px, rgba(46,135,200,0.75), transparent),
-             radial-gradient(4px 100px at 228px 150px, rgba(46,135,200,0.75), transparent),
-             radial-gradient(1.5px 1.5px at 226.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G11*/ radial-gradient(4px 100px at 250px 150px, rgba(46,135,200,0.80), transparent),
-             radial-gradient(4px 100px at 253px 150px, rgba(46,135,200,0.80), transparent),
-             radial-gradient(1.5px 1.5px at 251.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%),
-    /* G12*/ radial-gradient(4px 100px at 275px 150px, rgba(46,135,200,0.70), transparent),
-             radial-gradient(4px 100px at 278px 150px, rgba(46,135,200,0.70), transparent),
-             radial-gradient(1.5px 1.5px at 276.5px 150px, rgba(46,135,200,0.90) 100%, transparent 150%);
-  /* Alle 36 Layer: 300px × 300px — gleiche Y-Höhe ermöglicht translateY-Loop */
+    /* G1  tile 300×235 */ radial-gradient(4px 100px at 0px    235px, rgba(46,135,200,0.55), transparent),
+                           radial-gradient(4px 100px at 300px  235px, rgba(46,135,200,0.55), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  117.5px, rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G2  tile 300×252 */ radial-gradient(4px 100px at 0px    252px, rgba(46,135,200,0.42), transparent),
+                           radial-gradient(4px 100px at 300px  252px, rgba(46,135,200,0.42), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  126px,   rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G3  tile 300×150 */ radial-gradient(4px 100px at 0px    150px, rgba(46,135,200,0.50), transparent),
+                           radial-gradient(4px 100px at 300px  150px, rgba(46,135,200,0.50), transparent),
+                           radial-gradient(1.5px 1.5px at 150px   75px,   rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G4  tile 300×253 */ radial-gradient(4px 100px at 0px    253px, rgba(46,135,200,0.45), transparent),
+                           radial-gradient(4px 100px at 300px  253px, rgba(46,135,200,0.45), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  126.5px, rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G5  tile 300×204 */ radial-gradient(4px 100px at 0px    204px, rgba(46,135,200,0.55), transparent),
+                           radial-gradient(4px 100px at 300px  204px, rgba(46,135,200,0.55), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  102px,   rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G6  tile 300×134 */ radial-gradient(4px 100px at 0px    134px, rgba(46,135,200,0.38), transparent),
+                           radial-gradient(4px 100px at 300px  134px, rgba(46,135,200,0.38), transparent),
+                           radial-gradient(1.5px 1.5px at 150px   67px,   rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G7  tile 300×179 */ radial-gradient(4px 100px at 0px    179px, rgba(46,135,200,0.48), transparent),
+                           radial-gradient(4px 100px at 300px  179px, rgba(46,135,200,0.48), transparent),
+                           radial-gradient(1.5px 1.5px at 150px   89.5px, rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G8  tile 300×299 */ radial-gradient(4px 100px at 0px    299px, rgba(46,135,200,0.60), transparent),
+                           radial-gradient(4px 100px at 300px  299px, rgba(46,135,200,0.60), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  149.5px, rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G9  tile 300×215 */ radial-gradient(4px 100px at 0px    215px, rgba(46,135,200,0.42), transparent),
+                           radial-gradient(4px 100px at 300px  215px, rgba(46,135,200,0.42), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  107.5px, rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G10 tile 300×281 */ radial-gradient(4px 100px at 0px    281px, rgba(46,135,200,0.52), transparent),
+                           radial-gradient(4px 100px at 300px  281px, rgba(46,135,200,0.52), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  140.5px, rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G11 tile 300×158 */ radial-gradient(4px 100px at 0px    158px, rgba(46,135,200,0.55), transparent),
+                           radial-gradient(4px 100px at 300px  158px, rgba(46,135,200,0.55), transparent),
+                           radial-gradient(1.5px 1.5px at 150px   79px,   rgba(46,135,200,0.85) 100%, transparent 150%),
+    /* G12 tile 300×210 */ radial-gradient(4px 100px at 0px    210px, rgba(46,135,200,0.45), transparent),
+                           radial-gradient(4px 100px at 300px  210px, rgba(46,135,200,0.45), transparent),
+                           radial-gradient(1.5px 1.5px at 150px  105px,   rgba(46,135,200,0.85) 100%, transparent 150%);
+  /* Jede Spaltengruppe bekommt ihre eigene Tile-Höhe → versetzter Rhythmus */
   background-size:
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px,
-    300px 300px, 300px 300px, 300px 300px;
-  /* Versatz der Startpositionen (aus dem Originalprompt) erzeugt das organische Bild */
-  background-position:
-      0px 220px,   3px 220px,   1.5px 220px,
-     25px  24px,  28px  24px,  26.5px  24px,
-     50px  16px,  53px  16px,  51.5px  16px,
-     75px 224px,  78px 224px,  76.5px 224px,
-    100px  19px, 103px  19px, 101.5px  19px,
-    125px 120px, 128px 120px, 126.5px 120px,
-    150px  31px, 153px  31px, 151.5px  31px,
-    175px 235px, 178px 235px, 176.5px 235px,
-    200px 121px, 203px 121px, 201.5px 121px,
-    225px 224px, 228px 224px, 226.5px 224px,
-    250px  26px, 253px  26px, 251.5px  26px,
-    275px  75px, 278px  75px, 276.5px  75px;
-  will-change: transform;
-  animation: falling-slide 8s linear infinite;
+    300px 235px, 300px 235px, 300px 235px,
+    300px 252px, 300px 252px, 300px 252px,
+    300px 150px, 300px 150px, 300px 150px,
+    300px 253px, 300px 253px, 300px 253px,
+    300px 204px, 300px 204px, 300px 204px,
+    300px 134px, 300px 134px, 300px 134px,
+    300px 179px, 300px 179px, 300px 179px,
+    300px 299px, 300px 299px, 300px 299px,
+    300px 215px, 300px 215px, 300px 215px,
+    300px 281px, 300px 281px, 300px 281px,
+    300px 158px, 300px 158px, 300px 158px,
+    300px 210px, 300px 210px, 300px 210px;
+  will-change: background-position;
+  animation: falling-bp 120s linear infinite;
 }
 
-@keyframes falling-slide {
-  from { transform: translateY(0); }
-  to   { transform: translateY(300px); }
+@keyframes falling-bp {
+  from { background-position:
+      0px 220px,   3px 220px,   151.5px 337.5px,
+     25px  24px,  28px  24px,   176.5px 150px,
+     50px  16px,  53px  16px,   201.5px 91px,
+     75px 224px,  78px 224px,   226.5px 230.5px,
+    100px  19px, 103px  19px,   251.5px 121px,
+    125px 120px, 128px 120px,   276.5px 187px,
+    150px  31px, 153px  31px,   301.5px 120.5px,
+    175px 235px, 178px 235px,   326.5px 384.5px,
+    200px 121px, 203px 121px,   351.5px 228.5px,
+    225px 224px, 228px 224px,   376.5px 364.5px,
+    250px  26px, 253px  26px,   401.5px 105px,
+    275px  75px, 278px  75px,   426.5px 180px; }
+  to   { background-position:
+      0px 6800px,   3px 6800px,   151.5px 6917.5px,
+     25px 13632px,  28px 13632px,  176.5px 13758px,
+     50px 5416px,   53px 5416px,   201.5px 5491px,
+     75px 17175px,  78px 17175px,  226.5px 17301.5px,
+    100px 5119px,  103px 5119px,   251.5px 5221px,
+    125px 8428px,  128px 8428px,   276.5px 8495px,
+    150px 9876px,  153px 9876px,   301.5px 9965.5px,
+    175px 13391px, 178px 13391px,  326.5px 13540.5px,
+    200px 14741px, 203px 14741px,  351.5px 14848.5px,
+    225px 18770px, 228px 18770px,  376.5px 18910.5px,
+    250px 5082px,  253px 5082px,   401.5px 5161px,
+    275px 6375px,  278px 6375px,   426.5px 6480px; }
 }
 
 #falling-pattern-blur {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 50% 50%, transparent 0, transparent 2px, rgba(0,0,0,0.02) 2px);
+  backdrop-filter: blur(1px);
+  background-image: radial-gradient(circle at 50% 50%, transparent 0, transparent 2px, rgba(255,255,255,0.015) 2px);
   background-size: 8px 8px;
 }
 
