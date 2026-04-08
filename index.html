@@ -1573,7 +1573,7 @@
                     required
                   />
                   <label class="form-checkbox-label" for="form-privacy">
-                    Ich habe die <a href="#datenschutz">Datenschutzerklärung</a> gelesen und
+                    Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und
                     stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.
                     <span aria-hidden="true" style="color: var(--color-accent);"> *</span>
                   </label>
@@ -1655,9 +1655,8 @@
           &copy; 2026 Kardiologie Augsburg. Alle Rechte vorbehalten.
         </span>
         <nav class="footer-legal" aria-label="Rechtliches">
-          <a href="#impressum" id="impressum">Impressum</a>
-          <a href="#datenschutz" id="datenschutz">Datenschutz</a>
-          <a href="#barrierefreiheit">Barrierefreiheit</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
         </nav>
       </div>
     </div>
@@ -1870,5 +1869,33 @@
 
   <!-- Main JS -->
   <script src="js/main.js"></script>
+
+  <!-- ── COOKIE BANNER ── -->
+  <div id="cookie-banner" role="dialog" aria-label="Cookie-Einstellungen" aria-live="polite">
+    <p class="cookie-banner__text">
+      Diese Website verwendet technisch notwendige Cookies sowie optionale Analyse-Cookies, um Ihnen ein optimales Erlebnis zu bieten.
+      Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="cookie-btn cookie-btn--decline" id="cookie-decline">Nur notwendige</button>
+      <button class="cookie-btn cookie-btn--accept" id="cookie-accept">Alle akzeptieren</button>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var banner = document.getElementById('cookie-banner');
+      if (localStorage.getItem('cookie-consent')) {
+        banner.classList.add('is-hidden');
+      }
+      document.getElementById('cookie-accept').addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'all');
+        banner.classList.add('is-hidden');
+      });
+      document.getElementById('cookie-decline').addEventListener('click', function() {
+        localStorage.setItem('cookie-consent', 'necessary');
+        banner.classList.add('is-hidden');
+      });
+    })();
+  </script>
 </body>
 </html>
