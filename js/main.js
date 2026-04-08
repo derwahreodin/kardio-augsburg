@@ -333,12 +333,17 @@ function initUeberVideoScroll() {
 
   if (!wrapper || !video) return;
 
-  const NUM_PHASES = phases.length;  // 4
-  let ticking      = false;
-  let lastProgress = -1;
+  const NUM_PHASES  = phases.length;  // 4
+  let ticking       = false;
+  let lastProgress  = -1;
+  let videoReady    = false;
 
-  // Pre-load so scrubbing works immediately
-  video.load();
+  function updatePhases(progress) {
+    if (progressBar) progressBar.style.width = (progress * 100) + '%';
+    const active = Math.min(Math.floor(progress * NUM_PHASES), NUM_PHASES - 1);
+    phases.forEach((el, i) => el.classList.toggle('active', i === active));
+    dots.forEach((dot, i)  => dot.classList.toggle('active', i === active));
+  }
 
   function update() {
     const wrapperTop    = wrapper.getBoundingClientRect().top + window.scrollY;
@@ -349,28 +354,29 @@ function initUeberVideoScroll() {
 
     const progress = Math.max(0, Math.min(1, scrolled / maxScroll));
 
-    // Skip if barely moved
-    if (Math.abs(progress - lastProgress) < 0.0005) {
-      ticking = false;
-      return;
-    }
+    if (Math.abs(progress - lastProgress) < 0.0005) { ticking = false; return; }
     lastProgress = progress;
 
-    // Scrub video to matching frame
-    if (video.readyState >= 2 && video.duration) {
+    if (videoReady && video.duration) {
       video.currentTime = progress * video.duration;
     }
-
-    // Progress bar width
-    if (progressBar) progressBar.style.width = (progress * 100) + '%';
-
-    // Activate the matching phase (0–3)
-    const active = Math.min(Math.floor(progress * NUM_PHASES), NUM_PHASES - 1);
-    phases.forEach((el, i) => el.classList.toggle('active', i === active));
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === active));
-
+    updatePhases(progress);
     ticking = false;
   }
+
+  // Activate scroll listener as soon as video can be seeked
+  function onVideoReady() {
+    videoReady = true;
+    update();
+  }
+  video.addEventListener('canplay',        onVideoReady, { once: true });
+  video.addEventListener('loadedmetadata', onVideoReady, { once: true });
+
+  // Also run phases immediately even without video (fallback)
+  updatePhases(0);
+
+  video.preload = 'auto';
+  video.load();
 
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -379,7 +385,6 @@ function initUeberVideoScroll() {
     }
   }, { passive: true });
 
-  // Run once on load in case the page is already scrolled
   update();
 }
 
