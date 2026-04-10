@@ -839,16 +839,17 @@ button {
   z-index: 0;
 }
 
-/* Gradient overlay — heavy on left for text legibility */
+/* Gradient overlay — solid on left (covers video-gap), fades right */
 .ueber-video-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
-    115deg,
-    rgba(13, 31, 45, 0.72) 0%,
-    rgba(13, 31, 45, 0.50) 55%,
-    rgba(26, 106, 160, 0.22) 100%
+    to right,
+    rgba(13, 31, 45, 1.00)  0%,
+    rgba(13, 31, 45, 1.00) 20%,
+    rgba(13, 31, 45, 0.65) 50%,
+    rgba(13, 31, 45, 0.20) 100%
   );
 }
 
