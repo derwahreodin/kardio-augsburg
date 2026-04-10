@@ -357,8 +357,9 @@ function initUeberVideoScroll() {
     if (Math.abs(progress - lastProgress) < 0.0005) { ticking = false; return; }
     lastProgress = progress;
 
-    if (videoReady && video.duration) {
-      video.currentTime = progress * video.duration;
+    if (videoReady) {
+      const START = 1, END = 5;
+      video.currentTime = START + progress * (END - START);
     }
     updatePhases(progress);
     ticking = false;
